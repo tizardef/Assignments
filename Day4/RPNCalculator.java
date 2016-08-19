@@ -23,30 +23,30 @@ public class RPNCalculator {
 			if (term != -1) {
 				stk.push(term);
 				 
-		//else loop for operators. when and operator is reached, the 2 numbers ( p1, p2 ) are popped off the stack and the operator is applied 	
+		//else loop for operators. when an operator is reached, the 2 numbers ( p1, p2 ) are popped off the stack and the operator is applied 	
 		}
 			else {
 				if (ch == '+') {
-					int p1 = stk.pop();
 					int p2 = stk.pop();
+					int p1 = stk.pop();
 					int Answer = p1 + p2;
 					stk.push(Answer);
 				}
 				if (ch == '*') {
-					int p1 = stk.pop();
 					int p2 = stk.pop();
+					int p1 = stk.pop();
 					int Answer = p1 * p2;
 					stk.push(Answer);
 				}
 				if (ch == '-') {
-					int p1 = stk.pop();
 					int p2 = stk.pop();
+					int p1 = stk.pop();
 					int Answer = p1 - p2;
 					stk.push(Answer);
 				}
 				if (ch == '/') {
-					int p1 = stk.pop();
 					int p2 = stk.pop();
+					int p1 = stk.pop();
 					int Answer = p1 / p2;
 					stk.push(Answer);
 				}
