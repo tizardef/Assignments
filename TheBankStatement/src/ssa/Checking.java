@@ -1,13 +1,19 @@
 package ssa;
 
 public class Checking extends Account {
-
+	
+	public String accountType = null;
+	public int lastCheckNumber = 0;
 
 	
-	public Checking(){}
-
-	public String accountType = null;
+	public Checking(){
 		
+		lastCheckNumber=0;
+	}
+
+
+	//this.lastCheckNumber = 0;
+	
 	public String getAccountType() {
 		return accountType;
 	}

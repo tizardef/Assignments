@@ -6,37 +6,37 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class AccountTestCases {
-	Checking acct= new Checking();
-	Savings savingsAcct= new Savings();
+	Checking checkingAcct;
+	Savings savingsAcct;
 	@Before
 	public void setup(){
 		
 		
-		
-		
-		acct.setDescription("Evans Account");
-		acct.setAccountBalance(100);
+		savingsAcct= new Savings();
+		checkingAcct= new Checking();
+		checkingAcct.setDescription("Evans Account");
+		checkingAcct.setAccountBalance(100);
 		savingsAcct.setInterestRate(0.015);
-		
+		checkingAcct.setLastCheckNumber(0);
 		
 	}
 
 	@Test
 	public void testBalance(){
-		assertEquals(100,acct.getBalance(),0);
+		assertEquals(100,checkingAcct.getBalance(),0);
 		
 	}
 	
 
 	@Test
 	public void testDeposit() {
-		assertEquals(200, acct.deposit(100),0);
+		assertEquals(200, checkingAcct.deposit(100),0);
 		
 	}
 	
 	@Test
 	public void testDescription() {
-		assertEquals("Evans Account", acct.getDescription());
+		assertEquals("Evans Account", checkingAcct.getDescription());
 		
 	}
 	@Test
@@ -46,8 +46,8 @@ public class AccountTestCases {
 	}
 	@Test
 	public void testLastCheckingNumber() {
-		assertEquals(110, acct.getLastCheckNumber(),0);
+		assertEquals(0, checkingAcct.getLastCheckNumber(),0);
 	}
 	
-
+	
 }

@@ -9,14 +9,14 @@ public class Account {
 			private int accountId;
 			String description; 
 			private double accountBalance;
-			public int lastCheckNumber;
+			//public int lastCheckNumber;
 			public String accountType = null;
 			
 			//constructor to set the initial account balance to 0
 			public Account() {
 				   this.accountBalance = 0;
 				   this.accountId = 0;
-				   this.lastCheckNumber = 0;
+				
 			}
 			public Account(double accountBalance) {
 				this.accountBalance = accountBalance;
