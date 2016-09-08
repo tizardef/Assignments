@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class AccountTestCases {
 	Checking checkingAcct;
-	Savings savingsAcct;
+	Savings savingsAcct;  
 	@Before
 	public void setup(){
 		

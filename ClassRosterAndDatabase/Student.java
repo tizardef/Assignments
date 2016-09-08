@@ -3,34 +3,33 @@ package ssa;
 import java.util.*;
 
 public class Student {
-			 static ArrayList<Student> classRoster = new ArrayList<>();
+			  ArrayList<Student> classRoster = new ArrayList<>();
+			  ArrayList<Student> newList= new ArrayList<>();
 			 public String firstName;
 			 public String lastName;
 			 public String id; 
 			 public String eyeColor; 
 			 public int monthsEmployed;
 			 
-public Student(){
-//	if(ClassRoster == null) {
-//		classRoster = new ArrayList<Student>();
-//		Init();
-}
-
+public Student(){}
 public Student(String id, String firstName, String lastName, String eyeColor, int monthsEmployed) {
 	  this.id = id;
 	  this.firstName = firstName;
 	  this.lastName = lastName;
 	  this.eyeColor = eyeColor;
 	  this.monthsEmployed = monthsEmployed;
-	
-//	  public void printClassRoster() {
-//			Collections.sort(classRoster);
-//			this.printRosterHeader();
-//			for(Student aStudent : classRoster) {
-//				this.printStudentDetail(aStudent);
-//			}
-//		}
 }
+	
+//public void printClassRoster() {
+//	
+//
+//			Collections.sort(classRoster);
+//			//this.printRosterHeader();
+//			for(Student aStudent : classRoster) {
+//			//	this.printStudentDetail(aStudent);
+//			}
+//}
+
 
 
 			 
@@ -104,7 +103,24 @@ String firstName2 = s2.getFirstName();
 return firstName1.compareTo(firstName2);
 
 //descending order
-//return fruitName2.compareTo(fruitName1);
+//return firstName2.compareTo(firstName1);
+}
+
+};
+
+public static Comparator<Student> IdComparator
+= new Comparator<Student>() {
+
+public int compare(Student s1, Student s2) {
+
+String id1 = s1.getId();
+String id2 = s2.getId();
+
+//ascending order
+return id1.compareTo(id2);
+
+//descending order
+//return firstName2.compareTo(firstName1);
 }
 
 };
@@ -167,46 +183,40 @@ public void printClassRoster() {
 	
 	Collections.sort(classRoster,FirstNameComparator );
 	for(Student student: classRoster)
-		System.out.printf("%-10s %s %s %s %d %n",student.getId(), student.getFirstName(), student.getLastName(), student.getEyeColor(), student.getMonthsEmployed());
+		System.out.printf("%-8s %-10s  %-14s %-6s   %d %n",student.getId(), student.getFirstName(), student.getLastName(), student.getEyeColor(), student.getMonthsEmployed());
 	 
 	// Sorted
+	int flag = 0; 
+	//Collections.sort(classRoster,FirstNameComparator);
+	//Collections.sort(classRoster, IdComparator);
+	HashMap<String, String> studentMap= new HashMap<>();
+	Collections.sort(classRoster, IdComparator.reversed());
 	
-	//Collections.sort(classRoster,FirstNameComparator );
+	for(Student student: classRoster){
+		studentMap.put(student.getId(), student.getFirstName());
 	
-//	for(Student student: classRoster)
-//	System.out.println(student.getFirstName());
-//			
+	if(student.getId().equals("008888") || flag==1 ){
+		flag++;
+		newList.add(student);
+		
+	}
+	
 }
-//	public Student() {
-//		if(ClassRoster == null) {
-//			classRoster = new ArrayList<Student>();
-//			Init();
-//		}
-//	}
-//HashMap<String, String> studentRoster = new HashMap<String, String>();
-//studentRoster.put("00888", "Evan");
-//studentRoster.put("001122", "Michael");
-//studentRoster.put("001212", "Stephen");
-//studentRoster.put("474143", "Jonathan");
-//studentRoster.put("005295", "Kyle");
-//studentRoster.put("004400", "Kevin");
-//studentRoster.put("004400", "Kevin");
-//studentRoster.put("132617", "Reuben");
-//studentRoster.put("306700", "Li");
-//studentRoster.put("132617", "Reuben");
-//studentRoster.put("215296", "Joshua");
-//studentRoster.put("523420", "Gabriel");
-//studentRoster.put("004014", "Aisha");
-//studentRoster.put("006789", "Arun");
-//studentRoster.put("009999", "Steve");
-//studentRoster.put("3943769", "Shaquill");
-//studentRoster.put("001449", "Karen");
-//studentRoster.put("267252", "Dax");
-//studentRoster.put("229949", "Mike");
-//studentRoster.put("004444", "Peter");
-//studentRoster.put("005255", "Joe");
-//
-//String studentRosterList = studentRoster.get("008888");
-//System.out.println(id + firstName + lastName);
+	
+	Collections.sort(classRoster, IdComparator);
+	for(Student studentNew: classRoster){
+		if(studentNew.getId().equals("008888") || flag==3){
+	     flag++;
+	     if(flag==4) 	    	 
+	    	 newList.add(studentNew);
+	  
+		}
+}
+	
+	 Collections.sort(newList, IdComparator);
+	 for(int i=0; i< newList.size(); i++)
+	 System.out.printf("Id : %s and Name: %s %n", newList.get(i).getId(), newList.get(i).getFirstName());
+			
+}
 
 }
