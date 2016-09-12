@@ -1,0 +1,25 @@
+.orangetext {
+	color: orange;
+}
+.italictext {
+	font-style: italic;
+}
+span {
+	color: red;
+	font-weight: bold;
+}
+table {
+	border:1px solid grey;
+}
+td {
+	border:1px solid grey;
+}
+div {
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+	vertical-align: text-top;
+}
+#rightdiv {
+	color: black;
+}
