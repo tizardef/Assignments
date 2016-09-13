@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A page to play with styles</title>
+	<link rel="stylesheet" type="text/css" href="default.css">
+	<link rel="stylesheet" type="text/css" href="thispage.css">
+</head>
+<body>
+	<img src="http://www.bing.com/images/search?q=mourning+dove&view=detailv2&&id=F1C22E1B39C0907128A0FF99B324AF9927BB0F0C&selectedIndex=8&ccid=u9oQKHFv&simid=608033113888852538&thid=OIP.Mbbda1028716f2e8d158349bbaa8897ebo0">
+</body>
+</html>

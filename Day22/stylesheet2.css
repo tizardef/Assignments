@@ -1,0 +1,32 @@
+
+table {
+	border:1px solid grey;
+	border-collapse: collapse;
+}
+td {
+	border:1px solid grey;
+	border-collapse: collapse;
+}
+div {
+	width: 50%;
+	display: inline-block;
+	text-align: left;
+	vertical-align: text-top;
+}
+th{
+	border:1px solid grey;
+	border-collapse: collapse;
+}
+
+img{
+	width: 100px; height: 100px;
+}
+footer{
+	color: silver;
+	background-color: black;
+	text-align: center;
+
+}
+ul{
+	color: white;
+}
