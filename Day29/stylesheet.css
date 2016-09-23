@@ -1,0 +1,27 @@
+
+
+#ChannelList {
+	
+	text-decoration-color: white;
+	border:1px solid black;
+    height: 230px;
+    
+    background-color: orange;
+    word-wrap: break-word;
+    
+    
+}
+
+#h1 { text-align: center; }
+
+#text {
+	width: 49%;
+	text-align: left;
+	border:1px solid black;
+	background-color: powderblue;
+	height: 230px;
+
+}
+
+
+
