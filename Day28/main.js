@@ -1,10 +1,4 @@
-// if (nbr.value > 8) {
-// 	$("#nbr").addClass("colorRed"
-// 		);
 
-// } else { $("#nbr").removeClass("colorRed");
-
-// 	}
 
 $(document).ready(function() {
 
@@ -24,13 +18,7 @@ $(document).ready(function() {
 	}
 	});
 
-	//console.log("checking")
-	//if(nbr > 8) {
-	//	$("#number").addClass("colorRed");
-	//} else {
-	//	$("#number").removeClass("colorRed");
-	//}
-	//console.log("done")
+	
 
 	$("#decrement").click(function() {
 		nbr--;
@@ -45,42 +33,12 @@ $(document).ready(function() {
 
 	$("#reset").click(function() {
 	 	nbr=0;
+	 	$("#number").removeClass("colorRed");
 	 	$("#number").val(nbr);
 	 	}	);
 });
-/*
 
-function modify_nbr(val) {
-    var nbr = document.getElementById('nbr').value;
-    var new_nbr = parseInt(nbr,10) + val;
 
-    if (nbr.value > 8) {
-	$("#nbr").addClass("colorRed"
-		);
-
-} else { $("#nbr").removeClass("colorRed");
-
-	}
-    
-    
-    document.getElementById('nbr').value = new_nbr;
-    return new_nbr;
-}
-
-function reset_nbr(val) {
-	document.getElementById('nbr').value = 0;
-	
-	if (nbr.value > 8) {
-	$("#nbr").addClass("colorRed"
-		);
-
-} else { $("#nbr").removeClass("colorRed");
-
-	}
-
-}
-
-*/
 
 
 
