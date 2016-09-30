@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Consuming REST web service in Javascript</title>
+	<link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript">
+	//<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	
+	
+		$(document).ready(function() {
+
+			$.ajax({
+        		url: "http://localhost:8080/student"
+    		}).then(function(data) {
+    			
+    			var student_list = $("#student_list");
+    			
+    			for (var idx=0; idx < data.length; idx++) {
+    				
+    				var student_row = $("<div class=\"row\">");
+                    student_row.append($("<div class=\"col-sm-2\">&nbsp;</div>"));        
+                    student_row.append($("<div class=\"col-sm-1\">" + data[idx]["id"] + "</div>"));
+                    student_row.append($("<div class=\"col-sm-1\">" + data[idx]["first_name"] + "</div>"));
+                    student_row.append($("<div class=\"col-sm-1\">" + data[idx]["last_name"] + "</div>"));
+                    student_row.append($("<div class=\"col-sm-1\">" + data[idx]["sat"] + "</div>"));
+                    student_row.append($("<div class=\"col-sm-1\">" + data[idx]["gpa"] + "</div>"));
+                    student_row.append($("</div>"));
+                    
+                    student_list.append(student_row);
+    			
+    			}
+    		
+    		});
+	
+	
+		}); <!-- end ready -->
+
+	</script>
+	<h1>Student List</h1>
+</head>
+<body>
+ <div class="container"> 
+ <div class="row">
+
+
+
+ <div class="col-sm-2">&nbsp;</div> 
+ <div class="col-sm-1">ID</div>
+ <div class="col-sm-1">First</div>
+ <div class="col-sm-1">Last</div>
+ <div class="col-sm-1">SAT</div>
+ <div class="col-sm-1">GPA</div>
+ <div class="col-sm-5">&nbsp;</div>
+ 
+ </div>
+<div id="student_list">
+<table id= "student_list"></table>
+ </div>
+
+
+
+
+</body>
+</html>
