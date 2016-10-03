@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app ="AppMod">
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Student Table</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" type="text/javascript"></script>
+
+	<script src="index.js" type="text/javascript"></script>
+
+	
+</head>
+<body background="http://il8.picdn.net/shutterstock/videos/8261818/thumb/1.jpg" ng-controller="AppCtrl as ctrl">
+
+<h3 align="center">Students<span ng-bind="ctrl.about"/></h3>
+<div align="center">
+<button ng-click="ctrl.refresh()">Refresh</button>
+</div>
+
+<table align="center">
+	<th>ID</thead>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>SAT</th>
+	<th>GPA</th>
+	<th>Major ID</th>
+	<th>Show</th>
+	<!-- <tbody  ng-repeat>"student in ctrl.students"</tbody>
+ -->
+	<tr ng-show= "student.vis" ng-repeat="student in ctrl.students">
+    <td>{{ student.id }}</td>
+    <td>{{ student.firstname }}</td>
+    <td>{{ student.lastname }}</td>
+    <td>{{ student.gpa }}</td>
+    <td>{{ student.sat }}</td>
+    <td>{{ student.majorid }}</td>
+	<td><button ng-click= "student.vis = false">Hide</button></td>   
+    <!-- <td><button ng-click = "ctrl.hide("+{{student.id}}+")">Hide</button></td> -->
+  </tr>
+
+
+
+</table>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3>Students<span ng-bind="ctrl.about"/></h3>
+<button ng-click="ctrl.changeAbout('SSA')">Refresh</button>
+<ul ng-repeat="student in ctrl.students">
+	<li ng-show="student.vis">{{student.name}}</li>
+</ul> -->
