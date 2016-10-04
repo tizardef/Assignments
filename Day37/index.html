@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html ng-app="AppMod">
+
+
+<style>
+
+body { background-color: lightblue; }
+
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+form {
+	margin: 10px auto; width:50%; border:1px solid silver;
+		padding:10px;
+		background-color: lightgreen;
+}
+
+.gpa.ng-invalid, .sat.ng-invalid {
+	background-color: lightpink;
+}
+.fname.ng-pristine, .lname.ng-pristine, .gpa.ng-pristine, .sat.ng-pristine {
+	background-color:lightyellow; 
+}
+
+button {
+	text-align: center;
+}
+
+.buttonHolder{ text-align: center; }
+</style>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" type="text/javascript"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+	<title></title>
+</head>
+<body ng-controller = "App as ctrl" background="http://brd4953.cias.rit.edu/images/soft.jpg">
+
+
+	<form name="myForm" ng-submit= "ctrl.submit()">
+
+
+
+
+
+
+
+
+
+
+
+
+		<h1 align="center">Student Details</h1>
+		<p></p>
+		<table align="center">
+		
+		<tr>
+		<div class="form-group">
+		<td><label for="fname">First name:</label></td>
+		<td><input class="form-contol" type="text" id="fname" name="fname" ng-model="ctrl.user.firstname" required ng-minlength = "2" placeholder="first_name"/>
+		<span ng-show="myForm.fnmae.$error.required">This field is required</span>
+	</td>
+</div>
+	</tr>
+		<!-- <span ng-show="myForm.uname.$error.minlength">Min length is 4</span> -->
+		<!-- <span ng-show="myForm.uname.$error.$invalid">This field is invalid</span> -->
+		
+
+		
+
+	<tr>
+		<div class="form-group">
+			
+		<td><label for="lname">Last name:</label></td>
+	<td><input class="form-control" type="text" id="lname" name="lname" ng-model="ctrl.user.lastname" 
+		required ng-minlength = "2" placeholder="last_name"/>
+		 <span ng-show="myForm.lname.$error.required">This field is required</span>
+		</td>
+		</div>
+
+</tr>
+		<tr>
+		<div class="form-group"><td>
+		<label for="gpa">GPA:</label></td>
+		<td><input class="form-contol" type="text" id="gpa" name="gpa" ng-model="ctrl.user.gpa" required ng-minlength = "2" placeholder="GPA"/>
+		<span ng-show="myForm.gpa.$error.required" >This field is required</span>
+	</td>	
+</div>
+</tr>
+		<tr>
+		<div class="form-group"><td>
+		<label for="sat">SAT:</label></td>
+		<td><input class="form-contol" type="text" id="sat" name="sat" ng-model="ctrl.user.sat" required ng-minlength = "2" placeholder="SAT"/>	
+		<span ng-show="myForm.sat.$error.required">This field is required</span>
+		</td>
+	</div>	
+	</tr>
+		
+		</table>
+		<p></p>
+		<div class="buttonHolder">
+		<button type="submit" class="btn-default" ng-disabled = "myForm.$invalid" style="height:50px; width:100px" >Submit</button>
+
+		</div>
+
+	</form>
+</body>
+</html>
